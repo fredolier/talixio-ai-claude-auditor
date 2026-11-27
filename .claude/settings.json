@@ -1,0 +1,52 @@
+{
+  "claudeMdExcludes": [
+    "**/targets/**",
+    "**/evidence/**"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(scripts/fetch.sh *)",
+      "Bash(python3 -I scripts/map.py *)",
+      "Bash(git -C targets/* log *)",
+      "Bash(git -C targets/* show *)",
+      "Bash(git -C targets/* diff *)",
+      "Bash(git -C targets/* blame *)",
+      "Bash(git -C targets/* ls-files*)",
+      "Bash(git -C targets/* ls-tree *)",
+      "Bash(git -C targets/* rev-list *)",
+      "Bash(git -C targets/* rev-parse *)",
+      "Bash(git -C targets/* shortlog *)",
+      "Bash(git -C targets/* grep *)",
+      "Edit(/reports/**)",
+      "Edit(/evidence/**)"
+    ],
+    "deny": [
+      "Edit(/targets/**)",
+      "Edit(/.claude/settings*.json)",
+      "Bash(git -C * push*)",
+      "Bash(cd *targets*)",
+      "Bash(npm install*)",
+      "Bash(npm i *)",
+      "Bash(npx *)",
+      "Bash(pip install*)",
+      "Bash(pip3 install*)",
+      "Bash(brew *)",
+      "Bash(apt *)",
+      "Bash(apt-get *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "WebSearch"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+    "excludedCommands": [
+      "scripts/fetch.sh *"
+    ],
+    "network": {
+      "allowedDomains": []
+    }
+  }
+}
