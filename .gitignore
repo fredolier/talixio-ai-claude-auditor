@@ -1,0 +1,7 @@
+# The assessed code and the transcripts are never committed.
+# Ignoring targets/ also stops Claude Code from discovering a target's skills (see tests/selftest.sh).
+targets/
+evidence/
+# Reports quote the target's code, so they stay local unless you decide otherwise (delete this line).
+reports/
+__pycache__/
